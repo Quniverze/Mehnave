@@ -1,6 +1,9 @@
 /**
- * MEHNAVE ATELIER — INTERACTIVE ARCHIVE SCRIPTS
- * Showcase behavior: Category filter, textile swatches, garment spec detail drawer, stockist filter, hero video & motion
+ * MEHNAVE (CALICUT, KERALA) — ATELIER INTERACTIVE SHOWCASE
+ * Founder: Khadeeja Mehna
+ * Focus: Ethnic Wears (Kurta Sets, Anarkalis, Kaftans, Co-ords)
+ * Craft: Pure breathable Malabar cottons, hand-block printing, natural dyes
+ * Interactive: Category filters, botanical pastel swatches, modal spec drawer, WhatsApp concierge links, video motion
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategoryFilters();
   initShadePickers();
   initFormulaModal();
-  initStockistFilters();
   initMobileNav();
 });
 
@@ -33,7 +35,7 @@ function initHeroVideoAnimation() {
         toggleBtn.classList.remove('paused');
         if (iconPause) iconPause.style.display = 'block';
         if (iconPlay) iconPlay.style.display = 'none';
-        if (motionText) motionText.textContent = 'Ocean Motion';
+        if (motionText) motionText.textContent = 'Malabar Motion';
       }).catch(err => console.log('Video play error:', err));
     } else {
       video.pause();
@@ -102,7 +104,7 @@ function initMobileNav() {
   const toggleBtn = document.querySelector('.mobile-menu-btn');
   const mobileNav = document.querySelector('.mobile-nav');
   const closeBtn = document.querySelector('.mobile-nav-close');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-links a, .mobile-nav .btn-stockists');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-links a, .mobile-nav .btn-whatsapp');
 
   if (!toggleBtn || !mobileNav) return;
 
@@ -118,40 +120,44 @@ function initMobileNav() {
 
   toggleBtn.addEventListener('click', openNav);
   if (closeBtn) closeBtn.addEventListener('click', closeNav);
-  mobileNav.addEventListener('click', (e) => {
-    if (e.target === mobileNav) closeNav();
-  });
 
   mobileLinks.forEach(link => {
     link.addEventListener('click', closeNav);
   });
 }
 
-/* --- 3. Garment Category Filters --- */
+/* --- 3. Category Filter Tabs (Ethnic Wear: Kurtas, Anarkalis, Kaftans, Co-ords) --- */
 function initCategoryFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const productCards = document.querySelectorAll('.product-card');
+  const filterBtns = document.querySelectorAll('.category-filter-list .filter-btn');
+  const productCards = document.querySelectorAll('.product-grid .product-card');
 
-  if (!filterButtons.length || !productCards.length) return;
+  if (!filterBtns.length || !productCards.length) return;
 
-  filterButtons.forEach(btn => {
+  filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+
       btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
 
       const targetCategory = btn.getAttribute('data-category');
 
-      productCards.forEach(card => {
+      productCards.forEach((card, index) => {
         const cardCategory = card.getAttribute('data-category');
-        if (targetCategory === 'all' || cardCategory === targetCategory) {
+        const shouldShow = targetCategory === 'all' || cardCategory === targetCategory;
+
+        if (shouldShow) {
           card.style.display = 'flex';
           card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
+          card.style.transform = 'translateY(16px)';
           setTimeout(() => {
-            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-          }, 20);
+          }, index * 40);
         } else {
           card.style.display = 'none';
         }
@@ -160,179 +166,177 @@ function initCategoryFilters() {
   });
 }
 
-/* --- 4. Interactive Fabric & Colorway Swatches --- */
+/* --- 4. Interactive Shade Swatch Selection --- */
 function initShadePickers() {
   const shadePickers = document.querySelectorAll('.shade-picker');
 
   shadePickers.forEach(picker => {
     const chips = picker.querySelectorAll('.shade-chip');
-    const labelTarget = picker.closest('.shade-selector-block').querySelector('.active-shade-name');
+    const container = picker.closest('.shade-selector-block');
+    const activeLabel = container ? container.querySelector('.active-shade-name') : null;
 
     chips.forEach(chip => {
-      chip.addEventListener('click', () => {
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
         chips.forEach(c => c.classList.remove('selected'));
         chip.classList.add('selected');
 
         const shadeName = chip.getAttribute('data-shade-name');
-        if (labelTarget && shadeName) {
-          labelTarget.textContent = shadeName;
+        if (activeLabel && shadeName) {
+          activeLabel.textContent = shadeName;
         }
+
+        // Tactile micro-animation feedback
+        chip.style.transform = 'scale(0.88)';
+        setTimeout(() => {
+          chip.style.transform = '';
+        }, 150);
       });
     });
   });
 }
 
-/* --- 5. Garment Textile & Fit Detail Modal Drawer --- */
+/* --- 5. Handcrafted Ethnic Garment & Textile Architecture Data --- */
 const garmentTextileData = {
-  'c-trench': {
-    title: 'The Riviera Raw Linen Trench',
-    subtitle: 'Tailoring / Normandy Flax Canvas (340 GSM)',
-    image: 'assets/hero_clothing.jpg',
-    finish: 'Architectural Relaxed Trench / Storm Flap',
-    wearTime: '340 GSM Heavy Bio-Washed Linen Canvas',
-    skinTypes: 'Generous Dropped Shoulder with Belted Cinched Waist',
+  'c-beypore-kurta': {
+    title: 'The Beypore Straight Kurta Set',
+    subtitle: 'Kurta Sets / 110 GSM Malabar Handloom Cotton',
+    image: 'assets/kurta_set.jpg',
+    finish: 'Straight-Cut Tailored Silhouette with High Side Slits',
+    wearTime: '110 GSM River-Washed Pure Malabar Cotton',
+    skinTypes: 'Includes Straight Cropped Pants & Sheer Block Dupatta',
     keyActives: [
-      '100% Normandy Long-Staple Flax',
-      'Natural Buffalo Horn Buttons',
-      'Unlined Body for Optimal Airflow',
-      'French Seam Binding Throughout',
-      'Zero Petroleum Interfacings or Coatings'
+      '100% Pure Breathable Malabar Cotton',
+      'Hand-Carved Teakwood Block Print',
+      'Natural Botanical Mineral Dye',
+      'Natural Mother-of-Pearl Neckline Buttons',
+      'Tailored Ankle Trousers with Cotton Drawstring'
     ],
-    ritual: 'Dry clean organically or steam gently. Normandy flax softens naturally over decades, molding to the wearer’s natural posture.',
-    stockistNote: 'Permanent installation at Le Bon Marché Paris and Nordstrom NYC Flagship Atelier.'
+    ritual: 'Gentle hand wash in cold water with mild organic detergent. Dry in shaded sea breeze to protect natural botanical pigments.',
+    stockistNote: 'Custom tailored to your exact measurements via WhatsApp Concierge. Dispatched directly from Calicut, Kerala.'
   },
-  'c-silk-blazer': {
-    title: 'Sartorial Unstructured Silk Blazer',
-    subtitle: 'Tailoring / Raw Tussah Wild Silk',
-    image: 'assets/silk_blazer.jpg',
-    finish: 'Neapolitan Soft-Shoulder Architectural Cut',
-    wearTime: '260 GSM Raw Tussah Wild Silk Weave',
-    skinTypes: 'Easy Fluid Silhouette with Curved Patch Pockets',
+  'c-mananchira-kurta': {
+    title: 'The Mananchira Embroidered Kurta Set',
+    subtitle: 'Kurta Sets / 115 GSM Unbleached Kora Cotton',
+    image: 'assets/kurta_set.jpg',
+    finish: 'Relaxed Silhouette with Fine Hand Needlework',
+    wearTime: '115 GSM Organic Kora Handloom Cotton',
+    skinTypes: 'Split Mandarin Neckline with Straight Cigarette Pants',
     keyActives: [
-      '100% Raw Wild Tussah Mulberry Silk',
-      'Carved Corozo Nut Artisan Buttons',
-      'Natural Horsehair Canvas Chest Piece',
-      'Undyed Organic Cotton Pocket Linings',
-      'Breathable Open-Slub Slubbing'
+      '100% Unbleached Native Indian Kora Cotton',
+      'Subtle Tone-on-Tone Artisan Needlework',
+      'Natural Pomegranate & Madder Dye Accents',
+      'Concealed Inseam Side Pockets',
+      'Breathable Open-Slub Loom Texture'
     ],
-    ritual: 'Steam or cold spot clean. Store on broad wooden wishbone hanger to preserve natural shoulder drape.',
-    stockistNote: 'Available at SSENSE worldwide and Space NK London atelier salon.'
+    ritual: 'Cold hand wash separately. Iron lightly damp on reverse for crisp yet soft drape that softens further with every wash.',
+    stockistNote: 'Bespoke sleeve length, neckline depth, and pant measurements tailored on request.'
   },
-  'c-poplin-duster': {
-    title: 'Atelier Drape Poplin Duster',
-    subtitle: 'Tailoring / Double-Faced Organic Cotton Poplin',
-    image: null,
-    finish: 'Minimalist Longline Open Front Coat',
-    wearTime: '180 GSM High-Density GOTS Combed Cotton',
-    skinTypes: 'Floor-Grazing Fluid Duster with Deep Side Slits',
+  'c-malabar-anarkali': {
+    title: 'The Malabar Botanical Tiered Anarkali',
+    subtitle: 'Anarkalis / 95 GSM Featherlight Cambric Cotton',
+    image: 'assets/anarkali.jpg',
+    finish: 'Sweeping 3-Tier Gathered Floor-Length Gown',
+    wearTime: '95 GSM Featherlight Malabar Cambric Cotton',
+    skinTypes: 'Universally Flattering Gathered Silhouette with Matching Dupatta',
     keyActives: [
-      '100% Extra-Long Staple Organic Cotton',
-      'Natural Plant-Starch Crisp Weave Finish',
-      'Reinforced Bar-Tack Stress Seams',
-      'Zero Microplastic Synthetic Blends'
+      '100% Breathable Malabar Cambric Cotton',
+      '28 Hand-Aligned Wooden Block Impressions',
+      'Natural Madder Root & Iron Vat Extracts',
+      'Hand-Piped Neckline and Fitted Long Sleeves',
+      'Zero Synthetic Lining (Skin Breathes Fully)'
     ],
-    ritual: 'Gentle machine wash cold on delicate cycle. Line dry and warm iron while slightly damp for crisp architecture.',
-    stockistNote: 'Stocked across all European and North American retail stockists.'
+    ritual: 'Dry clean organically or dip gently in cold water with mild shampoo. Air dry on padded hanger in shade.',
+    stockistNote: 'Signature piece of Mehnave. Available for festive and wedding trousseau consultations.'
   },
-  'c-bias-slip': {
-    title: 'The Sunkissed Bias Slip Dress',
-    subtitle: 'Dresses / 22-Momme Sandwashed Silk',
-    image: 'assets/hero_clothing.jpg',
-    finish: 'Fluid 45-Degree True Bias Cut Silhouette',
-    wearTime: '22-Momme Heavyweight Sandwashed Mulberry Silk',
-    skinTypes: 'Skims Contours Fluidly Without Clinging or Pulling',
+  'c-wayanad-anarkali': {
+    title: 'The Wayanad Hand-Gathered Anarkali',
+    subtitle: 'Anarkalis / 105 GSM Soft Malabar Slub Cotton',
+    image: 'assets/anarkali.jpg',
+    finish: 'High-Waisted Flared Ankle-Length Silhouette',
+    wearTime: '105 GSM Textured Malabar Slub Cotton',
+    skinTypes: 'Empire Waist Gathers with Heirloom Botanical Hem',
     keyActives: [
-      '100% Grade 6A Mulberry Silk',
-      'Sandwashed for Velvet Peach-Skin Touch',
-      'Adjustable Delicate Rouleau Straps',
-      'Hand-Rolled Hemline Finishing',
-      'Mineral Vat Dyed with Madder Clays'
+      '100% Hand-Spun Kerala Cotton',
+      'Herbal Botanical Infusions for Color Longevity',
+      'Hand-Stitched Fabric Covered Buttons',
+      'Generous 4-Meter Gathers for Motion',
+      'Pair with Straight Trousers or Churidar'
     ],
-    ritual: 'Hand wash in tepid water with pH-neutral silk rinse. Lay flat on dry towel away from direct sun.',
-    stockistNote: 'Featured in the Paris Le Bon Marché luxury silk boutique.'
+    ritual: 'Hand wash cold with gentle organic detergent. Air dry in soft morning light; no stiff starch needed.',
+    stockistNote: 'Custom height and chest adjustments handcrafted at our Calicut atelier.'
   },
-  'c-linen-column': {
-    title: 'Terra Tiered Linen Column Dress',
-    subtitle: 'Dresses / Bio-Washed Normandy Flax Linen',
-    image: 'assets/linen_dress.jpg',
-    finish: 'Sculptural Boatneck Column with Subtle Waist Tuck',
-    wearTime: '220 GSM Medium-Weight Slub Linen',
-    skinTypes: 'Straight-Cut Architectural Fall with Back Vent',
+  'c-kozhikode-kaftan': {
+    title: 'The Kozhikode Breeze Cotton Kaftan',
+    subtitle: 'Kaftans / 120 GSM Pure Organic Cotton Weave',
+    image: 'assets/kaftan.jpg',
+    finish: 'Voluminous Modest Cocoon Drape with Cinched Waist',
+    wearTime: '120 GSM Pure Organic Cotton Weave',
+    skinTypes: 'Flattering Deep V-Neckline with Artisan Braided Tassels',
     keyActives: [
-      '100% Normandy Certified Flax Linen',
-      'Pre-Washed with Organic Bio-Enzymes',
-      'Concealed French Inseam Pockets',
-      'Organic Cotton Binding Internal Seams'
+      '100% Pure Breathable Malabar Cotton',
+      'Hand-Carved Teak Block Border Details',
+      'Hand-Braided Tassel Drawstring Waist',
+      'Modest Full-Coverage Silhouette',
+      'Naturally Hypoallergenic & Skin-Cooling'
     ],
-    ritual: 'Machine wash cool with natural detergent. Tumble cool or air dry; natural crinkle honors the fiber’s nobility.',
-    stockistNote: 'Permanent collection at Mecca Sydney and Nordstrom NYC.'
+    ritual: 'Cold hand wash or gentle machine delicate cycle. Lay flat or hang in shade away from direct midday sun.',
+    stockistNote: 'One relaxed fluid fit or customized lengths upon consultation.'
   },
-  'c-silk-caftan': {
-    title: 'Nocturne Heavy Silk Caftan',
-    subtitle: 'Dresses / Raw Crepe de Chine Drape',
-    image: null,
-    finish: 'Voluminous Cocoon Silhouette with Deep V-Neck',
-    wearTime: '30-Momme Heavyweight Textured Silk Crepe',
-    skinTypes: 'One-Size Generous Fluid Drape (Universal Fit)',
+  'c-arabica-kaftan': {
+    title: 'The Arabica Coast Lounging Kaftan',
+    subtitle: 'Kaftans / 100 GSM Handloom Fine Muslin Cotton',
+    image: 'assets/kaftan.jpg',
+    finish: 'Relaxed Open-Cut Silhouette with High Side Slits',
+    wearTime: '100 GSM Handloom Fine Muslin Cotton',
+    skinTypes: 'Effortless Resort & Festive Lounge Drape',
     keyActives: [
-      '100% Heavy Crepe de Chine Silk',
-      'Low-Impact Mineral Pigment Dye',
-      'High Side Hem Slits for Kinetic Flow',
-      'Internal Silk Belt Ties for Optional Cinched Waist'
+      '100% Fine Kerala Handloom Muslin Cotton',
+      'Natural Plant Resin & Catechu Dye',
+      'Hand-Rolled Edge Seams',
+      'Featherweight Breathability in Tropical Humidity',
+      'Deep Contrast Border Prints'
     ],
-    ritual: 'Eco-friendly dry clean or gentle cold hand wash. Store folded in breathable linen garment pouch.',
-    stockistNote: 'Exclusive capsule allocation at SSENSE and Restir Tokyo.'
+    ritual: 'Gentle cold soak with mild soap. Steam lightly or enjoy its natural lived-in texture.',
+    stockistNote: 'Made in limited small batches. Consult directly on WhatsApp for immediate allocation.'
   },
-  'c-cashmere-knit': {
-    title: 'Cashmere Air Ribbed Cardigan',
-    subtitle: 'Knitwear / 7-Gauge Pure Combed Cashmere',
-    image: 'assets/cashmere_knit.jpg',
-    finish: 'Relaxed Boxy Fit with English Fisherman Rib Knit',
-    wearTime: '380 GSM Heavyweight 2-Ply Mongolian Cashmere',
-    skinTypes: 'Drop-Shoulder Silhouette with Deep V-Neck Placket',
+  'c-nilambur-coord': {
+    title: 'The Nilambur Relaxed Ethnic Co-ord',
+    subtitle: 'Co-ords / 130 GSM Breathable Structured Cotton',
+    image: 'assets/coord_set.jpg',
+    finish: 'Boxy Mandarin Tunic & High-Rise Wide-Leg Culottes',
+    wearTime: '130 GSM Breathable Structured Malabar Cotton',
+    skinTypes: 'Effortless Two-Piece Ensemble with Functional Pockets',
     keyActives: [
-      '100% Superfine Grade-A Mongolian Cashmere',
-      'Ethically Sourced & Traceable Herding Cooperative',
-      'Hand-Carved Olive Wood Placket Buttons',
-      'Seamless Fully-Fashioned Knitting (Zero Yarn Waste)'
+      '100% Natural Malabar Cotton Weave',
+      'Hand-Pressed Micro Bootah Woodblock Print',
+      'Hand-Carved Coconut Shell Front Buttons',
+      'Flat Front Waistband with Elasticized Back',
+      'Deep Functional Inseam Pockets'
     ],
-    ritual: 'Hand wash in cold water with wool balm. Press between towels, do not wring. Dry flat on mesh rack.',
-    stockistNote: 'Available across all London, Paris, New York, and Tokyo retail locations.'
+    ritual: 'Machine wash delicate cold. Hang dry on padded hanger. Quick warm steam press.',
+    stockistNote: 'Separate top and pant sizing customized freely on WhatsApp.'
   },
-  'c-linen-trouser': {
-    title: 'Wide-Leg Pleated Linen Trouser',
-    subtitle: 'Trousers / High-Waist Architectural Flax',
-    image: 'assets/cashmere_knit.jpg',
-    finish: 'High-Rise Double Inverted Front Pleats',
-    wearTime: '280 GSM Heavy Slub Normandy Linen',
-    skinTypes: 'Elongating Wide-Leg Fall with Clean Front Fly',
+  'c-kappad-coord': {
+    title: 'The Kappad Leisure Tunic & Culotte Co-ord',
+    subtitle: 'Co-ords / 125 GSM Textured Slub Cotton',
+    image: 'assets/coord_set.jpg',
+    finish: 'High-Low Side Slit Tunic & Relaxed Fluid Trouser',
+    wearTime: '125 GSM Textured Slub Handloom Cotton',
+    skinTypes: 'Contemporary Minimalist Ethnic Silhouette',
     keyActives: [
-      '100% French Normandy Long-Staple Flax',
-      'Curved Tailored Waistband Curtain',
-      'Deep Slanted Pockets & Double Welt Back Pockets',
-      'Zero Synthetic Elastic or Interfacing'
+      '100% Pure Indian Hand-Spun Cotton',
+      'Hand-Block Floral Border Details',
+      'Hand-Finished Blind Hemming',
+      'Zero Polyester or Synthetic Stretch Blends',
+      'Breathable All-Day Travel and Festive Wear'
     ],
-    ritual: 'Wash cold inside out. Hang dry. Steam to release travel creases or wear relaxed for effortless resort ease.',
-    stockistNote: 'Stocked in all flagship departments and partner ateliers.'
-  },
-  'c-palazzo-pant': {
-    title: 'Sateen Lounge Palazzo Pant',
-    subtitle: 'Trousers / Silk-Cotton Heavy Luster Sateen',
-    image: null,
-    finish: 'Fluid Pull-On Lounge Trousers with Drawstring',
-    wearTime: '210 GSM Silk-Cotton Bi-Weave Luster',
-    skinTypes: 'Relaxed Mid-Rise with Flowing Wide Fluid Leg',
-    keyActives: [
-      '60% Mulberry Silk / 40% Long-Staple Cotton',
-      'Enclosed Flat Silk Drawstring Waist',
-      'Clean Blind Hemming at Ankle',
-      'Zero Static Cling Due to 100% Natural Fibers'
-    ],
-    ritual: 'Cool machine wash on gentle cycle inside a protective mesh wash bag. Cool iron on reverse side.',
-    stockistNote: 'Exclusive flagship stockist availability at Space NK and SSENSE.'
+    ritual: 'Cold hand wash. Line dry in shade. Warm iron on reverse side if desired.',
+    stockistNote: 'Handmade by Calicut artisans. Orders dispatched within 5 to 7 business days.'
   }
 };
 
+/* --- 6. Garment Textile & Fit Detail Drawer Modal --- */
 function initFormulaModal() {
   const modalBackdrop = document.querySelector('.modal-backdrop');
   const closeBtn = document.querySelector('.modal-close-btn');
@@ -345,10 +349,10 @@ function initFormulaModal() {
   const modalThumbImg = modalBackdrop.querySelector('.modal-thumb-img');
   const modalFinish = modalBackdrop.querySelector('.modal-finish');
   const modalWear = modalBackdrop.querySelector('.modal-wear');
-  const modalSkin = modalBackdrop.querySelector('.modal-skin');
   const modalIngredients = modalBackdrop.querySelector('.modal-ingredient-tags');
   const modalRitual = modalBackdrop.querySelector('.modal-ritual');
-  const modalStockist = modalBackdrop.querySelector('.modal-stockist-note');
+  const modalStockistNote = modalBackdrop.querySelector('.modal-stockist-note');
+  const modalWhatsAppBtn = modalBackdrop.querySelector('.modal-whatsapp-cta');
 
   const openModal = (productId) => {
     const data = garmentTextileData[productId];
@@ -356,30 +360,28 @@ function initFormulaModal() {
 
     if (modalTitle) modalTitle.textContent = data.title;
     if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
-    if (modalFinish) modalFinish.textContent = data.finish;
-    if (modalWear) modalWear.textContent = data.wearTime;
-    if (modalSkin) modalSkin.textContent = data.skinTypes;
-    if (modalRitual) modalRitual.textContent = data.ritual;
-    if (modalStockist) modalStockist.textContent = data.stockistNote;
 
     if (modalThumbImg) {
-      if (data.image) {
-        modalThumbImg.src = data.image;
-        modalThumbImg.style.display = 'block';
-      } else {
-        modalThumbImg.src = 'assets/hero_clothing.jpg';
-        modalThumbImg.style.display = 'block';
-      }
+      modalThumbImg.src = data.image || 'assets/hero_ethnic.jpg';
+      modalThumbImg.alt = data.title;
     }
 
+    if (modalFinish) modalFinish.textContent = data.finish;
+    if (modalWear) modalWear.textContent = data.wearTime;
+
     if (modalIngredients) {
-      modalIngredients.innerHTML = '';
-      data.keyActives.forEach(act => {
-        const span = document.createElement('span');
-        span.className = 'modal-ingredient-tag';
-        span.textContent = act;
-        modalIngredients.appendChild(span);
-      });
+      modalIngredients.innerHTML = data.keyActives
+        .map(tag => `<span class="modal-ingredient-tag">${tag}</span>`)
+        .join('');
+    }
+
+    if (modalRitual) modalRitual.textContent = data.ritual;
+    if (modalStockistNote) modalStockistNote.textContent = data.stockistNote;
+
+    // Dynamically update WhatsApp button URL with specific garment inquiry
+    if (modalWhatsAppBtn) {
+      const encodedMsg = encodeURIComponent(`Hello Khadeeja, I would like to inquire about the bespoke sizing and availability of "${data.title}" from Mehnave.`);
+      modalWhatsAppBtn.href = `https://wa.me/918137010627?text=${encodedMsg}`;
     }
 
     modalBackdrop.classList.add('open');
@@ -403,43 +405,14 @@ function initFormulaModal() {
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) closeModal();
+    if (e.target === modalBackdrop) {
+      closeModal();
+    }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
       closeModal();
     }
-  });
-}
-
-/* --- 6. Stockist City Filter --- */
-function initStockistFilters() {
-  const stockistFilterButtons = document.querySelectorAll('.stockist-filter-btn');
-  const stockistCards = document.querySelectorAll('.stockist-card');
-
-  if (!stockistFilterButtons.length || !stockistCards.length) return;
-
-  stockistFilterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      stockistFilterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const targetCity = btn.getAttribute('data-city');
-
-      stockistCards.forEach(card => {
-        const cardCity = card.getAttribute('data-city');
-        if (targetCity === 'all' || cardCity === targetCity) {
-          card.style.display = 'flex';
-          card.style.opacity = '0';
-          setTimeout(() => {
-            card.style.transition = 'opacity 0.3s ease';
-            card.style.opacity = '1';
-          }, 20);
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
   });
 }
