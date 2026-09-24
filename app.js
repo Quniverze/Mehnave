@@ -1,6 +1,6 @@
 /**
- * SOLÈNE BEAUTY — INTERACTIVE ARCHIVE SCRIPTS
- * Showcase behavior: Category filter, shade selectors, formula detail drawer, stockist filter
+ * MEHNAVE ATELIER — INTERACTIVE ARCHIVE SCRIPTS
+ * Showcase behavior: Category filter, textile swatches, garment spec detail drawer, stockist filter, hero video & motion
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,7 +53,7 @@ function initHeroVideoAnimation() {
     if (motionText) motionText.textContent = 'Motion Paused';
   }
 
-  // Subtle interactive parallax on mouse move in hero
+  // Subtle interactive parallax on mouse move in hero (desktop)
   if (heroSection && heroCard && window.innerWidth > 960) {
     let ticking = false;
     heroSection.addEventListener('mousemove', (e) => {
@@ -79,7 +79,6 @@ function initHeroVideoAnimation() {
     });
   }
 }
-
 
 /* --- 1. Sticky Header Elevation --- */
 function initStickyHeader() {
@@ -128,7 +127,7 @@ function initMobileNav() {
   });
 }
 
-/* --- 3. Product Category Filters --- */
+/* --- 3. Garment Category Filters --- */
 function initCategoryFilters() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const productCards = document.querySelectorAll('.product-card');
@@ -161,7 +160,7 @@ function initCategoryFilters() {
   });
 }
 
-/* --- 4. Interactive Shade Swatches --- */
+/* --- 4. Interactive Fabric & Colorway Swatches --- */
 function initShadePickers() {
   const shadePickers = document.querySelectorAll('.shade-picker');
 
@@ -183,160 +182,154 @@ function initShadePickers() {
   });
 }
 
-/* --- 5. Product Formula & Ingredient Detail Modal Drawer --- */
-const productFormulaData = {
-  'p-biome-tint': {
-    title: 'Fluid Nude Biome Tint',
-    subtitle: 'Face / Serum Emulsion SPF 30',
-    image: 'assets/hero_product.jpg',
-    finish: 'Luminous Dew / Sheer Buildable',
-    wearTime: '14-Hour Breathable Hydration',
-    skinTypes: 'All Skin Types, including Sensitive & Rosacea-Prone',
+/* --- 5. Garment Textile & Fit Detail Modal Drawer --- */
+const garmentTextileData = {
+  'c-trench': {
+    title: 'The Riviera Raw Linen Trench',
+    subtitle: 'Tailoring / Normandy Flax Canvas (340 GSM)',
+    image: 'assets/hero_clothing.jpg',
+    finish: 'Architectural Relaxed Trench / Storm Flap',
+    wearTime: '340 GSM Heavy Bio-Washed Linen Canvas',
+    skinTypes: 'Generous Dropped Shoulder with Belted Cinched Waist',
     keyActives: [
-      'Cold-Pressed Oregon Meadowfoam (42%)',
-      'Olive-Derived Biocompatible Squalane',
-      'Non-Nano Zinc Oxide (14.2%)',
-      'Phytosterol Ceramide Complex',
-      'Ectoin Environmental Shield'
+      '100% Normandy Long-Staple Flax',
+      'Natural Buffalo Horn Buttons',
+      'Unlined Body for Optimal Airflow',
+      'French Seam Binding Throughout',
+      'Zero Petroleum Interfacings or Coatings'
     ],
-    ritual: 'Dispense 2–3 drops onto fingertips. Warm gently between palms to activate the lipid matrix, then press and melt outward from center of face.',
-    stockistNote: 'Available for complimentary shade matching at all Paris, London, and New York retail partners.'
+    ritual: 'Dry clean organically or steam gently. Normandy flax softens naturally over decades, molding to the wearer’s natural posture.',
+    stockistNote: 'Permanent installation at Le Bon Marché Paris and Nordstrom NYC Flagship Atelier.'
   },
-  'p-flush-melt': {
-    title: 'Solar Flush Melting Cream',
-    subtitle: 'Face / Cheeks & Lips Butter',
-    image: 'assets/face_balm.jpg',
-    finish: 'Natural Skin-Glow / Weightless Satin',
-    wearTime: '10-Hour Non-Fading Pigment',
-    skinTypes: 'Dry, Balanced, and Combination Skin',
+  'c-silk-blazer': {
+    title: 'Sartorial Unstructured Silk Blazer',
+    subtitle: 'Tailoring / Raw Tussah Wild Silk',
+    image: 'assets/silk_blazer.jpg',
+    finish: 'Neapolitan Soft-Shoulder Architectural Cut',
+    wearTime: '260 GSM Raw Tussah Wild Silk Weave',
+    skinTypes: 'Easy Fluid Silhouette with Curved Patch Pockets',
     keyActives: [
-      'Suspension-Milled Earthen Iron Oxides',
-      'Cold-Pressed Jojoba Esters',
-      'Wild Rosehip Berry Oil',
-      'Shea Butter Tri-Glycerides',
-      'Tocopherol (Pure Vitamin E)'
+      '100% Raw Wild Tussah Mulberry Silk',
+      'Carved Corozo Nut Artisan Buttons',
+      'Natural Horsehair Canvas Chest Piece',
+      'Undyed Organic Cotton Pocket Linings',
+      'Breathable Open-Slub Slubbing'
     ],
-    ritual: 'Smile softly and tap directly onto the apple of the cheek using fingertips or a dense flat-top brush. Diffuse edges toward the hairline.',
-    stockistNote: 'Featured in the Selfridges London and Bon Marché Paris beauty discovery ateliers.'
+    ritual: 'Steam or cold spot clean. Store on broad wooden wishbone hanger to preserve natural shoulder drape.',
+    stockistNote: 'Available at SSENSE worldwide and Space NK London atelier salon.'
   },
-  'p-velour-clay': {
-    title: 'Velour Micro-Clay Silk',
-    subtitle: 'Face / Translucent Diffusing Veil',
+  'c-poplin-duster': {
+    title: 'Atelier Drape Poplin Duster',
+    subtitle: 'Tailoring / Double-Faced Organic Cotton Poplin',
     image: null,
-    finish: 'Cashmere Soft-Focus / Zero Chalkiness',
-    wearTime: 'Controls Midday Sheen Without Pilling',
-    skinTypes: 'Oily, Combination, and Humid Climate Wear',
+    finish: 'Minimalist Longline Open Front Coat',
+    wearTime: '180 GSM High-Density GOTS Combed Cotton',
+    skinTypes: 'Floor-Grazing Fluid Duster with Deep Side Slits',
     keyActives: [
-      'French Kaolin Air-Floated Clay',
-      'Bamboo Silica Micro-Spheres',
-      'Colloidal Oat Lipids',
-      'Organic Tapioca Starch',
-      'Allantoin Soothing Agent'
+      '100% Extra-Long Staple Organic Cotton',
+      'Natural Plant-Starch Crisp Weave Finish',
+      'Reinforced Bar-Tack Stress Seams',
+      'Zero Microplastic Synthetic Blends'
     ],
-    ritual: 'Gently swirl a fluffy powder brush into the mesh sifter. Tap off excess and press into the T-zone, smile lines, and under-eye area.',
-    stockistNote: 'In stock at all global retail partners.'
+    ritual: 'Gentle machine wash cold on delicate cycle. Line dry and warm iron while slightly damp for crisp architecture.',
+    stockistNote: 'Stocked across all European and North American retail stockists.'
   },
-  'p-petale-glaze': {
-    title: 'Pétale Glaze Lip Oil',
-    subtitle: 'Lips / Plumping Hydrating Glaze',
-    image: 'assets/lip_glaze.jpg',
-    finish: 'High-Lacquered Mirror Glass / Non-Sticky',
-    wearTime: '6-Hour Continuous Cushion Cushioning',
-    skinTypes: 'Universal Lip Hydration',
+  'c-bias-slip': {
+    title: 'The Sunkissed Bias Slip Dress',
+    subtitle: 'Dresses / 22-Momme Sandwashed Silk',
+    image: 'assets/hero_clothing.jpg',
+    finish: 'Fluid 45-Degree True Bias Cut Silhouette',
+    wearTime: '22-Momme Heavyweight Sandwashed Mulberry Silk',
+    skinTypes: 'Skims Contours Fluidly Without Clinging or Pulling',
     keyActives: [
-      'Tri-Peptide Plumping Complex',
-      'Cold-Pressed Red Raspberry Seed Oil',
-      'Botanical Meadowfoam Esters',
-      'Pomegranate Sterols',
-      'Hyaluronic Micro-Spheres'
+      '100% Grade 6A Mulberry Silk',
+      'Sandwashed for Velvet Peach-Skin Touch',
+      'Adjustable Delicate Rouleau Straps',
+      'Hand-Rolled Hemline Finishing',
+      'Mineral Vat Dyed with Madder Clays'
     ],
-    ritual: 'Glide the curved precision paddle applicator over bare lips, or layer over a bitten lip liner for dimension and glass reflection.',
-    stockistNote: 'Exclusive flagship shade archive available at SSENSE and Space NK.'
+    ritual: 'Hand wash in tepid water with pH-neutral silk rinse. Lay flat on dry towel away from direct sun.',
+    stockistNote: 'Featured in the Paris Le Bon Marché luxury silk boutique.'
   },
-  'p-cushion-matte': {
-    title: 'Cushion Suede Lip Stain',
-    subtitle: 'Lips / Blurring Velvet Botanical Stain',
+  'c-linen-column': {
+    title: 'Terra Tiered Linen Column Dress',
+    subtitle: 'Dresses / Bio-Washed Normandy Flax Linen',
+    image: 'assets/linen_dress.jpg',
+    finish: 'Sculptural Boatneck Column with Subtle Waist Tuck',
+    wearTime: '220 GSM Medium-Weight Slub Linen',
+    skinTypes: 'Straight-Cut Architectural Fall with Back Vent',
+    keyActives: [
+      '100% Normandy Certified Flax Linen',
+      'Pre-Washed with Organic Bio-Enzymes',
+      'Concealed French Inseam Pockets',
+      'Organic Cotton Binding Internal Seams'
+    ],
+    ritual: 'Machine wash cool with natural detergent. Tumble cool or air dry; natural crinkle honors the fiber’s nobility.',
+    stockistNote: 'Permanent collection at Mecca Sydney and Nordstrom NYC.'
+  },
+  'c-silk-caftan': {
+    title: 'Nocturne Heavy Silk Caftan',
+    subtitle: 'Dresses / Raw Crepe de Chine Drape',
     image: null,
-    finish: 'Diffused Modern Velvet / Weightless Petal',
-    wearTime: '8-Hour Transfer-Resistant Stain',
-    skinTypes: 'Universal Wear',
+    finish: 'Voluminous Cocoon Silhouette with Deep V-Neck',
+    wearTime: '30-Momme Heavyweight Textured Silk Crepe',
+    skinTypes: 'One-Size Generous Fluid Drape (Universal Fit)',
     keyActives: [
-      'Jeju Fermented Camellia Japonica Seed',
-      'Sunflower Seed Wax Emollients',
-      'Sub-Micronized Mineral Lake Pigments',
-      'Cloudberry Seed Oil Antioxidants',
-      'Bisabolol Soothing Compound'
+      '100% Heavy Crepe de Chine Silk',
+      'Low-Impact Mineral Pigment Dye',
+      'High Side Hem Slits for Kinetic Flow',
+      'Internal Silk Belt Ties for Optional Cinched Waist'
     ],
-    ritual: 'Dot once in the center of top and bottom lip, then diffuse outward using your ring finger for an effortless just-bitten editorial stain.',
-    stockistNote: 'Available at Le Bon Marché Paris, Restir Tokyo, and Nordstrom NYC.'
+    ritual: 'Eco-friendly dry clean or gentle cold hand wash. Store folded in breathable linen garment pouch.',
+    stockistNote: 'Exclusive capsule allocation at SSENSE and Restir Tokyo.'
   },
-  'p-nocturne-salve': {
-    title: 'Nocturne Phyto-Ceramide Salve',
-    subtitle: 'Lips / Barrier Recovery Butter',
+  'c-cashmere-knit': {
+    title: 'Cashmere Air Ribbed Cardigan',
+    subtitle: 'Knitwear / 7-Gauge Pure Combed Cashmere',
+    image: 'assets/cashmere_knit.jpg',
+    finish: 'Relaxed Boxy Fit with English Fisherman Rib Knit',
+    wearTime: '380 GSM Heavyweight 2-Ply Mongolian Cashmere',
+    skinTypes: 'Drop-Shoulder Silhouette with Deep V-Neck Placket',
+    keyActives: [
+      '100% Superfine Grade-A Mongolian Cashmere',
+      'Ethically Sourced & Traceable Herding Cooperative',
+      'Hand-Carved Olive Wood Placket Buttons',
+      'Seamless Fully-Fashioned Knitting (Zero Yarn Waste)'
+    ],
+    ritual: 'Hand wash in cold water with wool balm. Press between towels, do not wring. Dry flat on mesh rack.',
+    stockistNote: 'Available across all London, Paris, New York, and Tokyo retail locations.'
+  },
+  'c-linen-trouser': {
+    title: 'Wide-Leg Pleated Linen Trouser',
+    subtitle: 'Trousers / High-Waist Architectural Flax',
+    image: 'assets/cashmere_knit.jpg',
+    finish: 'High-Rise Double Inverted Front Pleats',
+    wearTime: '280 GSM Heavy Slub Normandy Linen',
+    skinTypes: 'Elongating Wide-Leg Fall with Clean Front Fly',
+    keyActives: [
+      '100% French Normandy Long-Staple Flax',
+      'Curved Tailored Waistband Curtain',
+      'Deep Slanted Pockets & Double Welt Back Pockets',
+      'Zero Synthetic Elastic or Interfacing'
+    ],
+    ritual: 'Wash cold inside out. Hang dry. Steam to release travel creases or wear relaxed for effortless resort ease.',
+    stockistNote: 'Stocked in all flagship departments and partner ateliers.'
+  },
+  'c-palazzo-pant': {
+    title: 'Sateen Lounge Palazzo Pant',
+    subtitle: 'Trousers / Silk-Cotton Heavy Luster Sateen',
     image: null,
-    finish: 'Rich Protective Enveloping Sheen',
-    wearTime: 'Overnight 12-Hour Moisture Reservoir',
-    skinTypes: 'Dehydrated, Weathered, and Sensitive Lips',
+    finish: 'Fluid Pull-On Lounge Trousers with Drawstring',
+    wearTime: '210 GSM Silk-Cotton Bi-Weave Luster',
+    skinTypes: 'Relaxed Mid-Rise with Flowing Wide Fluid Leg',
     keyActives: [
-      'Ceramide NP + AP + EOP Biomimetic Blend',
-      'Shea Butter Nilotica Fraction',
-      'Cold-Pressed Evening Primrose Oil',
-      'Fermented Beta-Glucan',
-      'Hydrolyzed Jojoba Esters'
+      '60% Mulberry Silk / 40% Long-Staple Cotton',
+      'Enclosed Flat Silk Drawstring Waist',
+      'Clean Blind Hemming at Ankle',
+      'Zero Static Cling Due to 100% Natural Fibers'
     ],
-    ritual: 'Warm a generous dab onto clean lips before sleep, or apply a sheer veil 15 minutes before matte lip pigment as an ultra-priming barrier.',
-    stockistNote: 'Offered as a complimentary gift with bespoke consultation at all stockists.'
-  },
-  'p-liquid-silk-eye': {
-    title: 'Molten Silk Liquid Eye Wash',
-    subtitle: 'Eyes / Molten Bronze Shimmer Tint',
-    image: 'assets/eye_tint.jpg',
-    finish: 'Multidimensional Wet-Look Sheen / Crease-Free',
-    wearTime: '12-Hour Smudge-Resistant Wear',
-    skinTypes: 'Ophthalmologist-Tested for Sensitive Eyes',
-    keyActives: [
-      'Ethically Sourced Coated Mica Flakes',
-      'Plant-Derived Squalane Vehicle',
-      'Cornflower Floral Water Extract',
-      'Rice Bran Hydrolyzed Proteins',
-      'Antioxidant Green Tea Polyphenols'
-    ],
-    ritual: 'Sweep one swipe across the mobile eyelid with the flocked wand, then immediately buff edges upward toward the crease with a soft ring finger.',
-    stockistNote: 'Permanent installation at Mecca Australia and Space NK UK.'
-  },
-  'p-brow-sculpt': {
-    title: 'Featherweight Laminating Brow Wax',
-    subtitle: 'Eyes / Rosemary Micro-Sculpt Pomade',
-    image: null,
-    finish: 'Clean Polished Fluff / Zero Flaking or Stiffness',
-    wearTime: '16-Hour Flexible Architectural Hold',
-    skinTypes: 'All Brow Textures, from Sparse to Coarse',
-    keyActives: [
-      'Purified Carnauba Botanical Wax',
-      'Cold-Pressed Organic Rosemary Leaf Extract',
-      'Panthenol (Pro-Vitamin B5 Follicle Conditioner)',
-      'Castor Seed Lipid Esters',
-      'Glycerin Moisture Binder'
-    ],
-    ritual: 'Coat a clean spoolie lightly with wax. Brush upward against brow grain to coat hairs thoroughly, then comb diagonally into natural shape.',
-    stockistNote: 'In stock at all partner boutiques.'
-  },
-  'p-kohl-glider': {
-    title: 'Kohl Satin Eye Glider',
-    subtitle: 'Eyes / Mineral Marula Pencil',
-    image: null,
-    finish: 'Ultra-Creamy Melt / Sets to Waterproof Satin',
-    wearTime: '10-Hour Waterline & Lashline Stability',
-    skinTypes: 'Safe for Contact Lens Wearers',
-    keyActives: [
-      'Cold-Pressed Virgin Marula Oil',
-      'Japanese Sumac Berry Wax',
-      'Natural Charcoal & Iron Oxide Black',
-      'Organic Avocado Unsaponifiables',
-      'Chamomile Flower Extract'
-    ],
-    ritual: 'Glide close along the upper lashline. Smudge within 45 seconds with a pencil brush for an effortless smoky haze before the formula locks in place.',
-    stockistNote: 'Stocked at Le Bon Marché, Space NK, and SSENSE.'
+    ritual: 'Cool machine wash on gentle cycle inside a protective mesh wash bag. Cool iron on reverse side.',
+    stockistNote: 'Exclusive flagship stockist availability at Space NK and SSENSE.'
   }
 };
 
@@ -358,7 +351,7 @@ function initFormulaModal() {
   const modalStockist = modalBackdrop.querySelector('.modal-stockist-note');
 
   const openModal = (productId) => {
-    const data = productFormulaData[productId];
+    const data = garmentTextileData[productId];
     if (!data) return;
 
     if (modalTitle) modalTitle.textContent = data.title;
@@ -374,7 +367,7 @@ function initFormulaModal() {
         modalThumbImg.src = data.image;
         modalThumbImg.style.display = 'block';
       } else {
-        modalThumbImg.src = 'assets/hero_product.jpg';
+        modalThumbImg.src = 'assets/hero_clothing.jpg';
         modalThumbImg.style.display = 'block';
       }
     }

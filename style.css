@@ -1,6 +1,6 @@
 /* ==========================================================================
-   SOLÈNE BEAUTY — DESIGN SYSTEM & STYLESHEET
-   Style: Warm, Polished, DTC Product-Forward (Rhode / Glossier aesthetic)
+   MEHNAVE ATELIER — DESIGN SYSTEM & STYLESHEET
+   Style: Warm, Polished, Tactile DTC Luxury Clothing (Rhode / Toteme / The Row tier)
    ========================================================================== */
 
 /* --- Google Fonts Import --- */
@@ -8,7 +8,7 @@
 
 /* --- CSS Variables & Color Tokens --- */
 :root {
-  /* Warm Earth & Product Pigment Palette */
+  /* Warm Earth & Natural Fiber Palette */
   --bg-canvas: #FAF7F2;          /* Porcelain linen canvas */
   --bg-surface: #FFFFFF;         /* Pure crisp white card surface */
   --bg-card-warm: #F6F1EA;       /* Warm sand card backdrop */
@@ -16,11 +16,11 @@
   --bg-tag: #F2EAE1;             /* Pill tag background */
   --bg-dark: #201916;            /* Deep roasted espresso */
   
-  /* Pigment Accents (Drawn from makeup products) */
-  --accent-terracotta: #C86D51;  /* Glazed terracotta / warm clay blush */
+  /* Natural Dye & Fiber Accents (Terra, Indigo, Amber, Sand) */
+  --accent-terracotta: #C86D51;  /* Glazed terracotta / mineral dye */
   --accent-terracotta-soft: rgba(200, 109, 81, 0.12);
-  --accent-fig: #B84A58;         /* Ripe crushed fig lip tint */
-  --accent-amber: #E29B68;       /* Sunkissed apricot glow */
+  --accent-fig: #B84A58;         /* Mulberry natural botanical dye */
+  --accent-amber: #E29B68;       /* Sunkissed apricot raw silk */
   --accent-gold: #D4A373;        /* Warm champagne shimmer */
   --accent-olive: #5B6350;       /* Botanical olive tone */
   
