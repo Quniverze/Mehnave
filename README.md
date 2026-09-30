@@ -1,59 +1,56 @@
-# MEHNAVE — Handcrafted Ethnic Wear Atelier | Calicut, Kerala
+# MEHNAVE — Online Ethnic Wear Label | Calicut, Kerala
 
-A warm, polished, product-forward single-page static showcase website for **MEHNAVE**, founded by **Khadeeja Mehna** in **Calicut, Kerala**. The brand is dedicated entirely to handcrafted ethnic wear — shaped by pure breathable Malabar cottons, hand-carved teakwood block printing, and natural botanical dyes.
+An elevated, genuine single-page static showcase website for **MEHNAVE**, an online-first ethnic wear label founded and designed by **Khadeeja Mehna** in **Calicut, Kerala**.
 
-> **Showcase, not a store:** Built strictly as a brand experience and garment catalog without e-commerce cart, checkout, or automated pricing. Every piece is made in conscientious, unhurried batches with custom sizing consultations conducted directly through the **WhatsApp Concierge (+91 8137010627)** or private studio appointments in Calicut.
+Mehnave designs and crafts contemporary ethnic wear — **Kurta Sets**, **Anarkalis**, **Kaftans**, and **Co-ords** — custom-tailored to deal with all client requirements (made-to-measure sizing, custom lengths, modest coverage, feeding-friendly zips, and event styling).
+
+> **Online Brand Model:** Mehnave operates 100% online through personalized WhatsApp consultation. Every piece is made to order without impersonal carts or automated checkout. Direct designer consultation and orders are conducted via WhatsApp (**+91 8137010627**), with doorstep delivery across India and worldwide.
 
 ---
 
 ## Brand Details
 
 - **Brand Name**: MEHNAVE
-- **Founder & Creative Director**: Khadeeja Mehna
-- **Base of Operations**: Calicut (Kozhikode), Kerala, India
-- **Hero Statement**: *"Malabar Grace, Reimagined."*
-- **Product Range**: Ethnic Wear only (Kurta Sets, Anarkalis, Kaftans, Co-ords)
-- **Textile Philosophy**: Pure breathable Malabar handloom cottons, river-washed soft finishes, hand-carved teak block prints, chemical-free vegetable and mineral vat dyes.
-- **Color Palette**: Soft pastel botanicals — *Powder Rose*, *Sage Mint*, *Ivory Kora*, and *Toasted Almond*.
-- **Direct Concierge**: WhatsApp `+91 8137010627` with pre-filled bespoke inquiry routing.
+- **Founder & Designer**: Khadeeja Mehna
+- **Base**: Calicut (Kozhikode), Kerala, India
+- **Business Model**: 100% Online · Made to Order
+- **Product Range**: Ethnic Wear Only:
+  - **Kurta Sets**: *The Beypore Straight Kurta Set*, *The Mananchira Embroidered Kurta Set*
+  - **Anarkalis**: *The Malabar Tiered Flared Anarkali*, *The Wayanad Flared Anarkali*
+  - **Kaftans**: *The Kozhikode Breeze Cotton Kaftan*, *The Arabica Coastal Kaftan*
+  - **Co-ords**: *The Nilambur Ethnic Co-ord Set*, *The Kappad Leisure Co-ord Set*
+- **Customization Promise**: Dealing with all requirements — custom chest/waist/hip measurements, petite/tall lengths, sleeve adjustments, feeding-friendly concealed zips, and fabric/color variations.
+- **Colorways**: Soft pastel botanicals — *Powder Rose*, *Sage Mint*, *Ivory Kora*, and *Toasted Almond*.
+- **Direct WhatsApp**: `+91 8137010627` with pre-filled bespoke order messages.
 
 ---
 
 ## Features
 
-- **Cinematic Hero with Looping Coastal Background Video**: Smooth looping aerial wave footage (`assets/hero_video.mp4`) celebrating Malabar's coastal trade history, with warm multi-stop gradient overlays, radial vignettes, and playback controls.
-- **Ambient Motion & Depth Controls**:
-  - Interactive play/pause toggle pill (`Malabar Motion`) with pulsing ripple indicator.
-  - Interactive 3D mouse parallax tilt on the flagship ensemble card.
-  - Reduced-motion accessibility detection (`prefers-reduced-motion`).
-- **Ethnic Wear Product Line Grid & Filter Tabs**:
-  - 8 foundational silhouettes across 4 categories:
-    - **Kurta Sets**: *The Beypore Straight Kurta Set*, *The Mananchira Embroidered Kurta Set*
-    - **Anarkalis**: *The Malabar Botanical Tiered Anarkali*, *The Wayanad Hand-Gathered Anarkali*
-    - **Kaftans**: *The Kozhikode Breeze Cotton Kaftan*, *The Arabica Coast Lounging Kaftan*
-    - **Co-ords**: *The Nilambur Relaxed Ethnic Co-ord*, *The Kappad Leisure Tunic & Culotte Co-ord*
-  - Dynamic category switching with smooth staggered fade transitions.
-  - Interactive pastel botanical shade swatches that update colorway names and textile labels in real time.
-- **Dedicated Founder's Note Section**:
-  - A heartfelt personal reflection from **Khadeeja Mehna** on Malabar's textile heritage, river-washed cottons, and the philosophy of slow, modest ethnic fashion.
-- **Artisanal Craft & Fit Slide-Over Drawer Modal**:
-  - Interactive detail drawer modal providing deep dives into weave architecture, GSM fabric weights, care and washing rituals, and custom measurement notes.
-  - Dynamically updates the **WhatsApp Concierge** button with the specific garment name pre-filled for custom orders.
-- **"The Malabar Textile Heritage" Craftsmanship Section**:
-  - Highlights pure breathable Malabar cottons, teakwood hand-block printing, and chemical-free botanical dyes with authentic artisan photography (`assets/block_printing.jpg`).
-- **Editorial Press Mentions**: Typographic editorial quotes from *The Hindu Lifestyle*, *Vogue India*, and *Platform Magazine*.
-- **Direct Concierge & Calicut Studio Section**:
-  - Direct WhatsApp Concierge cards, studio appointment scheduling, and small-batch bespoke guarantees.
-- **Mobile-First & Fully Responsive**: Built with semantic HTML5, CSS clamp-based fluid typography, and custom design tokens.
+- **Cinematic Looping Coastal Background Video**: Aerial ocean waves video celebrating Calicut's coastal atmosphere (`assets/hero_video.mp4`), with play/pause and reduced-motion controls.
+- **Dress-Only Photography**: High-end flat-lay and hanger product imagery with zero human faces or AI models.
+- **Product Line Grid & Filter Tabs**:
+  - Filter across All, Kurta Sets, Anarkalis, Kaftans, and Co-ords.
+  - Interactive pastel botanical shade swatches.
+  - Detailed modal drawer showing custom options, fabric feel, and care guides.
+- **"We Deal with All Requirements" Customization Section**:
+  - Highlights custom sizing, modest/feeding-friendly adjustments, and quality stitching, with fashion design studio flat-lay photography (`assets/tailoring_craft.jpg`).
+- **Founder's Note from Khadeeja Mehna**:
+  - A sincere personal message explaining the brand's online made-to-order philosophy.
+- **"How Ordering Works" 3-Step Process**:
+  - Browse designs &rarr; WhatsApp your size and custom requirements &rarr; Tailored and delivered to your doorstep.
+- **Direct WhatsApp Order Desk**:
+  - Direct links to message Khadeeja Mehna on WhatsApp (`+91 8137010627`).
+- **Mobile-First & Responsive**: Built with semantic HTML5, CSS custom properties, and vanilla JavaScript.
 
 ---
 
 ## Tech Stack
 
-- **HTML5**: Semantic document layout with accessible dialog/modal drawers and micro-interactions.
-- **CSS3**: Custom design tokens, fluid typography (`clamp`), glassmorphism (`backdrop-filter`), CSS Grid, and GPU-accelerated keyframe animations.
-- **Vanilla JavaScript**: Lightweight event-driven logic for video motion control, pastel fabric swatches, filter tabs, modal state, dynamic WhatsApp routing, and 3D parallax.
-- **Assets**: Handcrafted ethnic wear photography, artisanal Kerala block printing photography, and optimized looping background MP4.
+- **HTML5**: Semantic document structure with accessible modals and responsive drawers.
+- **CSS3**: Custom design tokens, fluid typography, glassmorphism, and responsive grid layouts.
+- **Vanilla JavaScript**: Lightweight event handling for video controls, category tabs, swatches, and dynamic WhatsApp routing.
+- **Assets**: Curated dress-only product photography and optimized looping background video.
 
 ---
 

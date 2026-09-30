@@ -1,9 +1,8 @@
 /**
- * MEHNAVE (CALICUT, KERALA) — ATELIER INTERACTIVE SHOWCASE
- * Founder: Khadeeja Mehna
- * Focus: Ethnic Wears (Kurta Sets, Anarkalis, Kaftans, Co-ords)
- * Craft: Pure breathable Malabar cottons, hand-block printing, natural dyes
- * Interactive: Category filters, botanical pastel swatches, modal spec drawer, WhatsApp concierge links, video motion
+ * MEHNAVE — ONLINE ETHNIC WEAR LABEL
+ * Founder & Designer: Khadeeja Mehna (Calicut, Kerala)
+ * Online-first brand: Custom design & tailoring for every requirement
+ * Direct WhatsApp: +91 8137010627
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,7 +34,7 @@ function initHeroVideoAnimation() {
         toggleBtn.classList.remove('paused');
         if (iconPause) iconPause.style.display = 'block';
         if (iconPlay) iconPlay.style.display = 'none';
-        if (motionText) motionText.textContent = 'Malabar Motion';
+        if (motionText) motionText.textContent = 'Calicut Breeze';
       }).catch(err => console.log('Video play error:', err));
     } else {
       video.pause();
@@ -196,147 +195,147 @@ function initShadePickers() {
   });
 }
 
-/* --- 5. Handcrafted Ethnic Garment & Textile Architecture Data --- */
+/* --- 5. Genuine Ethnic Garment & Custom Tailoring Data --- */
 const garmentTextileData = {
   'c-beypore-kurta': {
     title: 'The Beypore Straight Kurta Set',
-    subtitle: 'Kurta Sets / 110 GSM Malabar Handloom Cotton',
+    subtitle: 'Kurta Sets / Breathable Pure Soft Cotton',
     image: 'assets/kurta_set.jpg',
-    finish: 'Straight-Cut Tailored Silhouette with High Side Slits',
-    wearTime: '110 GSM River-Washed Pure Malabar Cotton',
-    skinTypes: 'Includes Straight Cropped Pants & Sheer Block Dupatta',
+    finish: 'Straight-Cut Kurta with Tailored Pants & Dupatta',
+    wearTime: 'Breathable, Soft All-Day Summer Cotton',
+    skinTypes: 'Includes Straight Tailored Pants & Floral Block Dupatta',
     keyActives: [
-      '100% Pure Breathable Malabar Cotton',
-      'Hand-Carved Teakwood Block Print',
-      'Natural Botanical Mineral Dye',
-      'Natural Mother-of-Pearl Neckline Buttons',
-      'Tailored Ankle Trousers with Cotton Drawstring'
+      'Custom Sizing to Exact Measurements (Bust, Waist, Hip, Height)',
+      'Sleeve Length & Neckline Customization Available',
+      'Concealed Feeding Zips Provided on Request',
+      'Matching Trousers with Comfortable Elastic/Drawstring',
+      '100% Online Order with Direct WhatsApp Consultation'
     ],
-    ritual: 'Gentle hand wash in cold water with mild organic detergent. Dry in shaded sea breeze to protect natural botanical pigments.',
-    stockistNote: 'Custom tailored to your exact measurements via WhatsApp Concierge. Dispatched directly from Calicut, Kerala.'
+    ritual: 'Gentle machine wash cold or quick hand wash with mild liquid detergent. Line dry in shade to maintain color depth.',
+    stockistNote: 'Online custom order. Share your measurements directly on WhatsApp for tailored sizing and custom adjustments.'
   },
   'c-mananchira-kurta': {
     title: 'The Mananchira Embroidered Kurta Set',
-    subtitle: 'Kurta Sets / 115 GSM Unbleached Kora Cotton',
+    subtitle: 'Kurta Sets / Textured Cotton with Delicate Needlework',
     image: 'assets/kurta_set.jpg',
-    finish: 'Relaxed Silhouette with Fine Hand Needlework',
-    wearTime: '115 GSM Organic Kora Handloom Cotton',
-    skinTypes: 'Split Mandarin Neckline with Straight Cigarette Pants',
+    finish: 'Graceful Split Neckline with Cigarette Trousers',
+    wearTime: 'Lightweight, Breathable Comfort Cotton',
+    skinTypes: 'Tailored Straight Fit with Deep Functional Side Pockets',
     keyActives: [
-      '100% Unbleached Native Indian Kora Cotton',
-      'Subtle Tone-on-Tone Artisan Needlework',
-      'Natural Pomegranate & Madder Dye Accents',
-      'Concealed Inseam Side Pockets',
-      'Breathable Open-Slub Loom Texture'
+      'Tailored to Any Body Measurements or Standard Sizes',
+      'Delicate Hand Needlework along Neckline & Cuffs',
+      'Custom Sleeve Length & Lining Options Available',
+      'Concealed Feeding Zips Built-In upon Request',
+      'Directly Dispatched to Your Doorstep Worldwide'
     ],
-    ritual: 'Cold hand wash separately. Iron lightly damp on reverse for crisp yet soft drape that softens further with every wash.',
-    stockistNote: 'Bespoke sleeve length, neckline depth, and pant measurements tailored on request.'
+    ritual: 'Gentle cold hand wash or machine wash delicate. Warm iron on reverse side for a crisp, neat finish.',
+    stockistNote: 'Custom made by Mehnave. Message Khadeeja Mehna on WhatsApp to tailor your exact fit.'
   },
   'c-malabar-anarkali': {
-    title: 'The Malabar Botanical Tiered Anarkali',
-    subtitle: 'Anarkalis / 95 GSM Featherlight Cambric Cotton',
+    title: 'The Malabar Tiered Flared Anarkali',
+    subtitle: 'Anarkalis / Flared Flowing Cotton Gown',
     image: 'assets/anarkali.jpg',
-    finish: 'Sweeping 3-Tier Gathered Floor-Length Gown',
-    wearTime: '95 GSM Featherlight Malabar Cambric Cotton',
-    skinTypes: 'Universally Flattering Gathered Silhouette with Matching Dupatta',
+    finish: '3-Tier Gathered Floor-Length Flare with Dupatta',
+    wearTime: 'Featherlight Airy Cotton with Generous Flare',
+    skinTypes: 'Universally Flattering Silhouette for Celebrations & Events',
     keyActives: [
-      '100% Breathable Malabar Cambric Cotton',
-      '28 Hand-Aligned Wooden Block Impressions',
-      'Natural Madder Root & Iron Vat Extracts',
-      'Hand-Piped Neckline and Fitted Long Sleeves',
-      'Zero Synthetic Lining (Skin Breathes Fully)'
+      'Custom Chest, Yoke Length & Total Gown Height Tailoring',
+      'Full Sweeping Flare without Heavy, Stiff Linings',
+      'Feeding-Friendly Concealed Zips on Request',
+      'Includes Matching Cotton Dupatta with Hand-Tied Tassels',
+      'Custom Modest Sleeve & Neckline Coverage Available'
     ],
-    ritual: 'Dry clean organically or dip gently in cold water with mild shampoo. Air dry on padded hanger in shade.',
-    stockistNote: 'Signature piece of Mehnave. Available for festive and wedding trousseau consultations.'
+    ritual: 'Hand wash gently in cold water or dry clean for special occasions. Hang on a padded hanger in the shade.',
+    stockistNote: 'Perfect for weddings, festive gatherings, and special events. Consult on WhatsApp for custom measurements.'
   },
   'c-wayanad-anarkali': {
-    title: 'The Wayanad Hand-Gathered Anarkali',
-    subtitle: 'Anarkalis / 105 GSM Soft Malabar Slub Cotton',
+    title: 'The Wayanad Flared Anarkali Set',
+    subtitle: 'Anarkalis / Soft Slub Cotton with Floral Motifs',
     image: 'assets/anarkali.jpg',
-    finish: 'High-Waisted Flared Ankle-Length Silhouette',
-    wearTime: '105 GSM Textured Malabar Slub Cotton',
-    skinTypes: 'Empire Waist Gathers with Heirloom Botanical Hem',
+    finish: 'Empire Gathered Ankle-Length Silhouette',
+    wearTime: 'Soft Textured Cotton for All-Day Wear',
+    skinTypes: 'Generous Gathers for Effortless Grace & Movement',
     keyActives: [
-      '100% Hand-Spun Kerala Cotton',
-      'Herbal Botanical Infusions for Color Longevity',
-      'Hand-Stitched Fabric Covered Buttons',
-      'Generous 4-Meter Gathers for Motion',
-      'Pair with Straight Trousers or Churidar'
+      'Custom Lengths for Petite or Tall Heights',
+      'Modest Necklines & Full Sleeve Customization Available',
+      'Pair with Matching Straight Pants or Churidars',
+      'Breathable Non-Itchy Inner Seam Stitching',
+      'Personal Designer Guidance from Khadeeja Mehna'
     ],
-    ritual: 'Hand wash cold with gentle organic detergent. Air dry in soft morning light; no stiff starch needed.',
-    stockistNote: 'Custom height and chest adjustments handcrafted at our Calicut atelier.'
+    ritual: 'Cold gentle wash. Air dry in soft morning light. Iron on medium setting.',
+    stockistNote: 'Made to your specific order. Share your desired length and measurements on WhatsApp.'
   },
   'c-kozhikode-kaftan': {
     title: 'The Kozhikode Breeze Cotton Kaftan',
-    subtitle: 'Kaftans / 120 GSM Pure Organic Cotton Weave',
+    subtitle: 'Kaftans / Relaxed Modest Loungewear & Outing Kaftan',
     image: 'assets/kaftan.jpg',
-    finish: 'Voluminous Modest Cocoon Drape with Cinched Waist',
-    wearTime: '120 GSM Pure Organic Cotton Weave',
-    skinTypes: 'Flattering Deep V-Neckline with Artisan Braided Tassels',
+    finish: 'Fluid Cocoon Fit with Adjustable Waist Drawstring',
+    wearTime: '100% Breathable, Soft Washing Cotton',
+    skinTypes: 'Comfortable Split V-Neck with Braided Cotton Tassels',
     keyActives: [
-      '100% Pure Breathable Malabar Cotton',
-      'Hand-Carved Teak Block Border Details',
-      'Hand-Braided Tassel Drawstring Waist',
-      'Modest Full-Coverage Silhouette',
-      'Naturally Hypoallergenic & Skin-Cooling'
+      'One Generous Relaxed Size or Custom Tailored Height',
+      'Adjustable Waist Drawstring to Cinch or Wear Loose',
+      'Full-Coverage Modest Cut with Elegant Border Detailing',
+      'Feeding-Friendly Front Button or Zip Variations Available',
+      'Effortless Slip-On Comfort for Daily & Occasion Wear'
     ],
-    ritual: 'Cold hand wash or gentle machine delicate cycle. Lay flat or hang in shade away from direct midday sun.',
-    stockistNote: 'One relaxed fluid fit or customized lengths upon consultation.'
+    ritual: 'Cold machine wash on delicate cycle. Hang to dry away from harsh direct midday sunlight.',
+    stockistNote: 'Online order ready. Message us on WhatsApp with your color choice and length preference.'
   },
   'c-arabica-kaftan': {
-    title: 'The Arabica Coast Lounging Kaftan',
-    subtitle: 'Kaftans / 100 GSM Handloom Fine Muslin Cotton',
+    title: 'The Arabica Coastal Kaftan',
+    subtitle: 'Kaftans / Featherweight Breathable Cotton',
     image: 'assets/kaftan.jpg',
-    finish: 'Relaxed Open-Cut Silhouette with High Side Slits',
-    wearTime: '100 GSM Handloom Fine Muslin Cotton',
-    skinTypes: 'Effortless Resort & Festive Lounge Drape',
+    finish: 'Relaxed Silhouette with Contrast Printed Cuffs & Hem',
+    wearTime: 'Ultra-Soft Muslin Cotton for Warm Climates',
+    skinTypes: 'Effortless Resort, Travel & Festive Lounge Drape',
     keyActives: [
-      '100% Fine Kerala Handloom Muslin Cotton',
-      'Natural Plant Resin & Catechu Dye',
-      'Hand-Rolled Edge Seams',
-      'Featherweight Breathability in Tropical Humidity',
-      'Deep Contrast Border Prints'
+      'Super-Soft, Non-Transparent Lightweight Cotton',
+      'Custom Sleeve Length & Side Slit Height on Request',
+      'Airy Fit Designed for Humidity & Warm Weather',
+      'Quick Ordering & Prompt Doorstep Delivery',
+      'Custom Pockets Added upon Request'
     ],
-    ritual: 'Gentle cold soak with mild soap. Steam lightly or enjoy its natural lived-in texture.',
-    stockistNote: 'Made in limited small batches. Consult directly on WhatsApp for immediate allocation.'
+    ritual: 'Quick cold hand wash. Shake out creases and dry in shade. Light steam if desired.',
+    stockistNote: 'Made to order by Mehnave. Chat on WhatsApp for direct sizing and immediate dispatch dates.'
   },
   'c-nilambur-coord': {
-    title: 'The Nilambur Relaxed Ethnic Co-ord',
-    subtitle: 'Co-ords / 130 GSM Breathable Structured Cotton',
+    title: 'The Nilambur Ethnic Co-ord Set',
+    subtitle: 'Co-ords / Modern Tunic & Wide-Leg Culottes',
     image: 'assets/coord_set.jpg',
-    finish: 'Boxy Mandarin Tunic & High-Rise Wide-Leg Culottes',
-    wearTime: '130 GSM Breathable Structured Malabar Cotton',
-    skinTypes: 'Effortless Two-Piece Ensemble with Functional Pockets',
+    finish: 'Smart Mandarin Tunic & Comfortable Elastic Crop Pants',
+    wearTime: 'Structured Breathable Cotton for All-Day Polish',
+    skinTypes: 'Effortless Two-Piece Set with Deep Functional Pockets',
     keyActives: [
-      '100% Natural Malabar Cotton Weave',
-      'Hand-Pressed Micro Bootah Woodblock Print',
-      'Hand-Carved Coconut Shell Front Buttons',
-      'Flat Front Waistband with Elasticized Back',
-      'Deep Functional Inseam Pockets'
+      'Separate Top & Bottom Sizing (Mix & Match Sizes)',
+      'Custom Tunic Length & Sleeve Length Options',
+      'High-Rise Culottes with Flat Front & Elastic Back',
+      'Feeding Zip Additions Welcomed on Request',
+      'Tailored with Neat Interlocked Seams for Longevity'
     ],
-    ritual: 'Machine wash delicate cold. Hang dry on padded hanger. Quick warm steam press.',
-    stockistNote: 'Separate top and pant sizing customized freely on WhatsApp.'
+    ritual: 'Machine wash cold on gentle cycle. Hang dry. Easy warm iron.',
+    stockistNote: 'One of our most popular online designs. Chat on WhatsApp to share your top and pant sizes.'
   },
   'c-kappad-coord': {
-    title: 'The Kappad Leisure Tunic & Culotte Co-ord',
-    subtitle: 'Co-ords / 125 GSM Textured Slub Cotton',
+    title: 'The Kappad Leisure Co-ord Set',
+    subtitle: 'Co-ords / Relaxed High-Low Tunic & Trousers',
     image: 'assets/coord_set.jpg',
-    finish: 'High-Low Side Slit Tunic & Relaxed Fluid Trouser',
-    wearTime: '125 GSM Textured Slub Handloom Cotton',
-    skinTypes: 'Contemporary Minimalist Ethnic Silhouette',
+    finish: 'High-Low Side Slit Tunic with Straight Fluid Pants',
+    wearTime: 'Natural Slub Cotton with Soft Botanical Tones',
+    skinTypes: 'Minimalist Contemporary Ethnic Everyday Luxury',
     keyActives: [
-      '100% Pure Indian Hand-Spun Cotton',
-      'Hand-Block Floral Border Details',
-      'Hand-Finished Blind Hemming',
-      'Zero Polyester or Synthetic Stretch Blends',
-      'Breathable All-Day Travel and Festive Wear'
+      'Custom Bust, Waist, and Pant Inseam Measurements',
+      'Flattering Modest High-Low Hemline Coverage',
+      'Soft Pre-Washed Cotton that Never Shrinks',
+      'Available in All Four Signature Pastel Botanical Shades',
+      '100% Online Consultation with Founder Khadeeja Mehna'
     ],
-    ritual: 'Cold hand wash. Line dry in shade. Warm iron on reverse side if desired.',
-    stockistNote: 'Handmade by Calicut artisans. Orders dispatched within 5 to 7 business days.'
+    ritual: 'Hand wash or delicate machine wash cold. Hang to dry on a padded hanger.',
+    stockistNote: 'Custom made to your order. Inquire directly on WhatsApp to order your personalized set.'
   }
 };
 
-/* --- 6. Garment Textile & Fit Detail Drawer Modal --- */
+/* --- 6. Garment Craft & Customization Drawer Modal --- */
 function initFormulaModal() {
   const modalBackdrop = document.querySelector('.modal-backdrop');
   const closeBtn = document.querySelector('.modal-close-btn');
@@ -380,7 +379,7 @@ function initFormulaModal() {
 
     // Dynamically update WhatsApp button URL with specific garment inquiry
     if (modalWhatsAppBtn) {
-      const encodedMsg = encodeURIComponent(`Hello Khadeeja, I would like to inquire about the bespoke sizing and availability of "${data.title}" from Mehnave.`);
+      const encodedMsg = encodeURIComponent(`Hello Khadeeja, I would like to order "${data.title}" from Mehnave. Can you help me with custom sizing and details?`);
       modalWhatsAppBtn.href = `https://wa.me/918137010627?text=${encodedMsg}`;
     }
 
